@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -fPIC -Wall
-TARGET_DIR = build/lib
-TARGET = $(TARGET_DIR)/libarith.so
-EXAMPLE = build/main
+TARGET_DIR = ../build
+TARGET = $(TARGET_DIR)/lib/libarith.so
+EXAMPLE = $(TARGET_DIR)/main
 
 all: $(TARGET) $(EXAMPLE)
 
@@ -15,10 +15,10 @@ arith.o: arith.c arith.h
 	$(CC) $(CFLAGS) -c arith.c -o arith.o
 
 $(EXAMPLE): examples/main.c
-	$(CC) -o $(EXAMPLE) examples/main.c -L$(TARGET_DIR) -larith
+	$(CC) -o $(EXAMPLE) examples/main.c -L$(TARGET_DIR)/lib -larith
 
 run: all
-	./build/main
+	../build/main
 
 clean:
 	rm -f *.o $(TARGET) $(EXAMPLE)
