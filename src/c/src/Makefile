@@ -7,7 +7,7 @@ EXAMPLE = $(TARGET_DIR)/main
 all: $(TARGET) $(EXAMPLE)
 
 $(TARGET): arith.o
-	mkdir -p $(TARGET_DIR)
+	mkdir -p $(TARGET_DIR)/lib
 	$(CC) -shared -o $(TARGET) arith.o
 	rm -f arith.o
 
