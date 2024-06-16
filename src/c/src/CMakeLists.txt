@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(Frog)
 
 # Set the target name
-set(TARGET libarith)
+set(TARGET arith)
 
 # Set the output directories
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
